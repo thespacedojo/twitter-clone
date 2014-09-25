@@ -6,4 +6,6 @@ This app is being created solely for [Meteor.js training purposes](http://meteor
 
 * iron:router
 * mizzao:bootstrap-3
+* natestrauser:font-awesome
+* stylus
 
