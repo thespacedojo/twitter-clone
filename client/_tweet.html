@@ -1,0 +1,21 @@
+<template name="tweet">
+<!-- start tweet -->
+<li class="list-group-item tweet">
+
+<!-- display name, @username, and time ago -->
+<h5 class="tweet-author">{{userFullName}} <span class="author-info"><a href="#">@{{username}} &middot; {{tweetedTime}}</a></span></h5>
+
+<!-- the post content -->
+<p class="list-group-item-text">{{text}}</p>
+
+<span class="expand"><a href="#">Expand</a></span>
+
+<!-- post interactions -->
+<div class="tweet-options pull-right">
+  <button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
+  <button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
+  <button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
+</div>
+</li>
+<!-- end tweet -->
+</template>
