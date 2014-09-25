@@ -36,6 +36,7 @@ minimongo@1.0.3-rc1
 mizzao:bootstrap-3@3.2.0
 mobile-status-bar@1.0.0-cordova3
 mongo@1.0.4-rc1
+natestrauser:font-awesome@4.2.0
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 random@1.0.0
@@ -47,6 +48,8 @@ routepolicy@1.0.0-cordova1
 session@1.0.1
 spacebars-compiler@1.0.2
 spacebars@1.0.1
+standard-app-packages@1.0.1
+stylus@1.0.3-rc1
 templating@1.0.6-rc2
 tracker@1.0.2
 ui@1.0.2
