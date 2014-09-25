@@ -1,187 +1,192 @@
 body
-	background url('/images/universe.png')
-	padding-bottom 100px
+  background url('/images/universe.png')
+  padding-bottom 100px
 
 
 #main-navigation, #profile-navigation
-	background #fff
-	padding 0
-	margin 0
-	border none
+  background #fff
+  padding 0
+  margin 0
+  border none
 
-	.navbar-brand
-		font-size 20px
-		position relative
-		bottom 7px
-		color #0C76AB
-		i
-			font-size 28px
-			position relative
-			top 3px
-			color #0C76AB
+  .navbar-brand
+    font-size 20px
+    position relative
+    bottom 7px
+    color #0C76AB
+    i
+      font-size 28px
+      position relative
+      top 3px
+      color #0C76AB
 
 #main-navigation
-	.navbar-nav
-		li a
-			border-bottom 3px solid white
-			// padding-top 16px
-			// padding-bottom 11px
-			padding 16px 3px 11px 0px
-			margin 0 10px 0
-			font-size 14px
-			i
-				font-size 18px
+  .navbar-nav
+    li a
+      border-bottom 3px solid white
+      // padding-top 16px
+      // padding-bottom 11px
+      padding 16px 3px 11px 0px
+      margin 0 10px 0
+      font-size 14px
+      i
+        font-size 18px
 
-				&.fa-pencil-square-o
-					position relative
-					top 2px
-			&:hover
-				color #0C76AB
-				border-bottom 3px solid #0C76AB
-				transition border .5s
+        &.fa-pencil-square-o
+          position relative
+          top 2px
+      &:hover
+        color #0C76AB
+        border-bottom 3px solid #0C76AB
+        transition border .5s
 
 #profile-navigation
-	padding 0
-	height auto
+  padding 0
+  height auto
 
-	ul.nav, ul.navbar-nav
-		display inline
-		float left
-	
-	li
-		padding 10px
-		float left
+  ul.nav, ul.navbar-nav
+    display inline
+    float left
 
-		a
-			padding 10px
+  li
+    padding 10px
+    float left
 
-		span.info
-			font-weight 600
-			display block
-			margin 0
-		span.number
-			color darken(#8899a6, 10%)
-			margin 0
+    a
+      padding 10px
 
-		&.follow-me
-			float right
-			padding 10px 0 10px 50px
-			button
-				float right
+    span.info
+      font-weight 600
+      display block
+      margin 0
+    span.number
+      color darken(#8899a6, 10%)
+      margin 0
+
+    &.follow-me
+      float right
+      padding 10px 0 10px 50px
+      button
+        float right
 
 
-	/* Small devices (tablets, 768px and up) */
-	@media screen and (min-width: 768px) 
-		ul.nav, ul.navbar-nav
-			display inline
-			float left
-		li
-			padding 10px 25px
-			&.active
-				background-color #f8f8f8
-			&:hover
-				background-color #f5f5f5
-				cursor default
-			
-			&.follow-me
-				padding 10px 15px
-				button
-					margin 3px 0
-				&:hover
-					background none
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px)
+    ul.nav, ul.navbar-nav
+      display inline
+      float left
+    li
+      padding 10px 25px
+      &.active
+        background-color #f8f8f8
+      &:hover
+        background-color #f5f5f5
+        cursor default
+
+      &.follow-me
+        padding 10px 15px
+        button
+          margin 3px 0
+        &:hover
+          background none
 
 
 p
-	line-height 1.4
+  line-height 1.4
 
 
 
 #profile-panel
-	span.username
-		font-weight 700
-		font-size 18px
-		line-height 21px
-	#profile-stats
-		margin 50px auto 0
+  span.username
+    font-weight 700
+    font-size 18px
+    line-height 21px
+  #profile-stats
+    margin 50px auto 0
 
-		.head
-			font-size 10px
-			line-height 10px
-			color #8899a6
-			text-transform uppercase
-			font-weight 300
-		.numbers
-			font-size 16px
-			line-height 18px
-			font-weight 700
+    .head
+      font-size 10px
+      line-height 10px
+      color #8899a6
+      text-transform uppercase
+      font-weight 300
+    .numbers
+      font-size 16px
+      line-height 18px
+      font-weight 700
 
 .panel
-	h4
-		margin 0
-	.panel-footer
-		background-color #EBF2F5
-		// border 1px solid darken(#DDE8ED, 5%)
-			
-		&.short
-			padding-bottom 1px
+  h4
+    margin 0
+  .panel-footer
+    background-color #EBF2F5
+    // border 1px solid darken(#DDE8ED, 5%)
+
+    &.short
+      padding-bottom 1px
 
 #trending
-	a
-		&:hover
-			color #0C76AB
-			text-decoration underline
+  a
+    &:hover
+      color #0C76AB
+      text-decoration underline
 
 #stream
-	margin-top 80px
+  margin-top 80px
 
 #profile-stream
-	margin-top 40px
+  margin-top 40px
 
-	h3.username
-		margin 0
-		font-weight 700
+  h3.username
+    margin 0
+    font-weight 700
 
-	span.handle
-		color #8899a6
-		font-size 14px
-		display block
-		margin-bottom 5px
+  span.handle
+    color #8899a6
+    font-size 14px
+    display block
+    margin-bottom 5px
 
-	p.user-profile-description
-		font-size 14px
-		line-height 20px
+  p.user-profile-description
+    font-size 14px
+    line-height 20px
 
-	ul.user-profile-info
-		list-style-type none
-		margin 0 0 20px 0
-		padding 0
-		display block
-		text-align
+  ul.user-profile-info
+    list-style-type none
+    margin 0 0 20px 0
+    padding 0
+    display block
+    text-align
 
-		li
-			padding 5px 0
-			border-bottom 1px solid #ccc
+    li
+      padding 5px 0
+      border-bottom 1px solid #ccc
+
+.compose
+    button
+        margin-top 10px
+        margin-right 15px
 
 #tweet-stream, #notification-stream
-	li.tweet
-		h5.tweet-author
-			font-size 15px
-			margin 5px 0
-		p
-			margin 0 0 8px 0
-			line-height 1.5
-		span.expand
-			font-size 12px
-			line-height 18px
-		span.author-info
-			font-weight 400
-			color #8899a6
-		
-		.tweet-options > button
-				border none
-		&:hover
-			background-color #f5f5f5
-			cursor pointer
+  li.tweet
+    h5.tweet-author
+      font-size 15px
+      margin 5px 0
+    p
+      margin 0 0 8px 0
+      line-height 1.5
+    span.expand
+      font-size 12px
+      line-height 18px
+    span.author-info
+      font-weight 400
+      color #8899a6
+
+    .tweet-options > button
+        border none
+    &:hover
+      background-color #f5f5f5
+      cursor pointer
 
 
 .entry {
@@ -189,35 +194,35 @@ p
 }
 
 #profile-background
-	height 250px
-	background url('/images/fields.jpg')
-	background-size cover
-	background-position center center
+  height 250px
+  background url('/images/fields.jpg')
+  background-size cover
+  background-position center center
 
-	/* Small devices (tablets, 768px and up) */
-	@media screen and (min-width: 768px) 
-		height 400px
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px)
+    height 400px
 
 .img-mover
   width 220px
 
 .profile-information
-	text-align center
-	/* Small devices (tablets, 768px and up) */
-	@media screen and (min-width: 768px) 
-		text-align left
+  text-align center
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px)
+    text-align left
 
 .profile-image
-	margin-bottom 20px
-	border-radius 5px
-	border 5px solid white
-	height 150px
-	width 150px
-	box-shadow 0px 1px 2px #f1f1f1
+  margin-bottom 20px
+  border-radius 5px
+  border 5px solid white
+  height 150px
+  width 150px
+  box-shadow 0px 1px 2px #f1f1f1
 
-	/* Small devices (tablets, 768px and up) */
-	@media screen and (min-width: 768px) 
-		margin-top -170px
-		margin-bottom 20px
-		height 200px
-		width 200px
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px)
+    margin-top -170px
+    margin-bottom 20px
+    height 200px
+    width 200px
