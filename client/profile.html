@@ -65,61 +65,9 @@
 					<h4 class="list-group-item-heading">My Latest Tweets</h4>
 				</li>
 
-				<!-- unit (delete extras for loop) -->
-				<li class="list-group-item tweet">
-					<h5 class="tweet-author">amanda saffer <span class="author-info"><a href="#">@12pixels &middot; 16m</a></span></h5>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod ratione debitis. </p>
-
-					<span class="expand"><a href="#">Expand</a></span>
-
-					<div class="tweet-options pull-right">
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-					</div>
-				</li>
-
-				<!-- unit -->
-				<li class="list-group-item tweet">
-					<h5 class="tweet-author">amanda saffer <span class="author-info"><a href="#">@12pixels &middot; 18m</a></span></h5>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
-
-					<span class="expand"><a href="#">Expand</a></span>
-
-					<div class="tweet-options pull-right">
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-					</div>
-				</li>
-
-				<!-- unit -->
-				<li class="list-group-item tweet">
-					<h5 class="tweet-author">amanda saffer <span class="author-info"><a href="#">@12pixels &middot; 25m</a></span></h5>
-					<p class="list-group-item-text">Dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod rati.</p>
-
-					<span class="expand"><a href="#">Expand</a></span>
-
-					<div class="tweet-options pull-right">
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-					</div>
-				</li>
-
-				<!-- unit -->
-				<li class="list-group-item tweet">
-					<h5 class="tweet-author">amanda saffer <span class="author-info"><a href="#">@12pixels &middot; 26m</a></span></h5>
-					<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
-
-					<span class="expand"><a href="#">Expand</a></span>
-
-					<div class="tweet-options pull-right">
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-						<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-					</div>
-				</li>
+        {{#each tweets}}
+          {{> tweet}}
+        {{/each}}
 
 				<li class="list-group-item load-more">
 					<a href="#">Load more tweets</a>
