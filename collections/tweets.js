@@ -1,7 +1,7 @@
 Tweets = new Mongo.Collection('tweets')
 
 Tweets.before.insert(function(userId, doc) {
-  doc.tweetedAt = Date.now();
+  doc.tweetedAt = moment()._d;
   doc.userId = userId;
 })
 

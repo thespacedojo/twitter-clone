@@ -8,7 +8,7 @@ Meteor.publish('profile', function(username) {
 
 Meteor.publish('profileTweets', function(username) {
   user = Users.findOne({username: username});
-  return Tweets.find({userId: user._id});
+  return Tweets.find({userId: user._id}, {sort: {tweetedAt: -1}});
 })
 
 Meteor.publish('relationship', function(username) {
