@@ -10,3 +10,8 @@ Meteor.publish('profileTweets', function(username) {
   user = Users.findOne({username: username});
   return Tweets.find({userId: user._id});
 })
+
+Meteor.publish('relationship', function(username) {
+  user = Users.findOne({username: username});
+  return Relationships.find({followerId: this.userId, followingId: user._id})
+})
