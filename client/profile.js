@@ -1,10 +1,4 @@
 Template.profile.helpers({
-  newTweets: function() {
-    return this.tweets(Session.get('tweetsSeenAt'), true);
-  },
-  tweets: function() {
-    return this.tweets(Session.get('tweetsSeenAt'));
-  },
   joined: function() {
     return moment(this.createdAt).format("MMMM Do, YYYY")
   },
