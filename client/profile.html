@@ -68,11 +68,7 @@
 				<li class="list-group-item">
 					<h4 class="list-group-item-heading">My Latest Tweets</h4>
 				</li>
-        {{#if newTweets.count}}
-        <li class="list-group-item tweet">
-          <p>There are {{newTweets.count}} new tweets! <a class="showTweets">Show</a></p>
-        </li>
-        {{/if}}
+        {{> newTweets}}
         {{#each tweets}}
           {{> tweet}}
         {{/each}}
