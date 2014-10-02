@@ -9,9 +9,9 @@ Template.profile.helpers({
 
 Template.profile.events({
   'click .follow-me': function(event, template) {
-    Meteor.call('relationships/create', template.data._id)
+    Meteor.call('relationships/create', template.data.user._id)
   },
   'click .unfollow-me': function(event, template) {
-    Meteor.call('relationships/destroy', template.data._id)
+    Meteor.call('relationships/destroy', template.data.user._id)
   }
 })
