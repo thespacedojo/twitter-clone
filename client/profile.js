@@ -1,6 +1,6 @@
 Template.profile.helpers({
   joined: function() {
-    return moment(this.createdAt).format("MMMM Do, YYYY")
+    return moment(this.user.createdAt).format("MMMM Do, YYYY")
   },
   following: function() {
     return Relationships.findOne({followerId: Meteor.userId(), followingId: this._id})

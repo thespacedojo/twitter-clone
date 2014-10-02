@@ -50,13 +50,13 @@
 			<div class="profile-information">
 				<img src="https://pbs.twimg.com/profile_images/484387570214645761/BFPL5V4G_400x400.jpeg" alt="" class="profile-image">
 
-        <h3 class="username">{{profile.name}}</h3>
-        <span class="handle">@{{username}}</span>
-        <p class="user-profile-description">{{profile.description}}</p>
+        <h3 class="username">{{user.profile.name}}</h3>
+        <span class="handle">@{{user.username}}</span>
+        <p class="user-profile-description">{{user.profile.description}}</p>
 
 				<ul class="user-profile-info">
-          <li><i class="fa fa-fw fa-map-marker"></i> {{profile.location}}</li>
-          <li><i class="fa fa-fw fa-link"></i> {{profile.url}}</li>
+          <li><i class="fa fa-fw fa-map-marker"></i> {{user.profile.location}}</li>
+          <li><i class="fa fa-fw fa-link"></i> {{user.profile.url}}</li>
           <li><i class="fa fa-fw fa-clock-o"></i> Joined {{joined}}</li>
 				</ul>
 			</div>
