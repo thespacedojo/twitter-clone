@@ -6,3 +6,19 @@ Template.tweet_stream.events({
     });
   }
 })
+
+Template.tweet_stream.settings = function() { return {
+  position: "bottom",
+  limit: 5,
+  rules: [
+  {
+    token: '@',
+    collection: 'Users',
+    field: "username",
+    subscription: 'usernames',
+    matchAll: true,
+    template: Template.userPill
+  }
+  ]
+}
+}

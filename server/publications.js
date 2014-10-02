@@ -46,3 +46,24 @@ Meteor.publish('relationship', function(username) {
   user = Users.findOne({username: username});
   return Relationships.find({followerId: this.userId, followingId: user._id})
 })
+
+Meteor.publish('usernames', function(selector, options, collName) {
+  collection = global[collName]
+  sub = this
+  console.log(selector)
+  console.log(options)
+  handle = collection.find(selector, options).observeChanges({
+    added: function(id, fields) {
+      sub.added('autocompleteRecords', id, fields)
+    },
+    changed: function(id, fields) {
+      sub.changed('autocompleteRecords', id, fields)
+    },
+    removed: function(id) {
+      sub.removed('autocompleteRecords', id)
+    }
+  });
+
+  sub.ready();
+  sub.onStop(function() { handle.stop() });
+});

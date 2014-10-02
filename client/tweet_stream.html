@@ -13,8 +13,8 @@
 
 						<!-- profile information -->
 						<div class="media-body">
-							<span class="username"><strong>amanda saffer</strong></span> <br>
-							<span class="handle">@12pixels</span>
+							<span class="username"><strong>{{user.profile.name}}</strong></span> <br>
+							<span class="handle">@{{user.username}}</span>
 						</div>
 
 						<!-- profile stats -->
@@ -34,6 +34,7 @@
 
 					<!-- compose a tweet -->
 					<div class="panel-footer">
+            {{> inputAutocomplete settings=settings class="form-control tweet-input" placeholder="Compose new Tweet..."}}
             <input type="text" class="form-control tweet-input" placeholder="Compose new Tweet...">
             <div class="row">
               <button type="button" class="btn btn-default btn-xs pull-right tweet-btn"><i class="fa fa-reply"></i> Tweet</button>
@@ -102,4 +103,8 @@
 			</div>
 		</div>
 	</div>
+</template>
+
+<template name="userPill">
+  <span class="label">{{username}}</span>
 </template>
