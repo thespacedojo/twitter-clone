@@ -3,7 +3,9 @@ Template.profile.helpers({
     return moment(this.user.createdAt).format("MMMM Do, YYYY")
   },
   following: function() {
-    return Relationships.findOne({followerId: Meteor.userId(), followingId: this._id})
+    if (Meteor.user() && Meteor.user().followingIds) {
+      return _.contains(Meteor.user().followingIds, this.user._id);
+    }
   }
 })
 

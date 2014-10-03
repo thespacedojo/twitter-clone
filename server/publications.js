@@ -1,37 +1,41 @@
 Meteor.publish('tweets', function() {
+  self = this
   cursor = [];
-  relationships = Relationships.find({followerId: this.userId})
-  followingIds = relationships.map(function(relation) {return relation.followingId})
-  followingIds.push(this.userId);
-  // self = this
-  // handleUsers = relationships.observeChanges({
-  //   added: function(id, fields) {
-  //     console.log('Added a relationship ' + fields.followingId);
-  //     self.added('users', fields.followingId, Users.findOne({_id: fields.followingId}));
-  //   },
-  //   removed: function(id, fields) {
-  //     self.removed('users', fields.followingId);
-  //   }
-  // });
-  // handleTweets = relationships.observeChanges({
-  //   added: function(id, fields) {
-  //     tweets = Tweets.find({userId: fields.followingId})
-  //     _.each(tweets, function(tweet) {
-  //       self.added('tweets', tweet._id, tweet);
-  //     });
-  //   },
-  //   removed: function(id, fields) {
-  //     tweetIds = Tweets.find({userId: fields.followingId}).map(function(tweet) {return tweet._id});
-  //     _.each(tweetIds, function(id) {
-  //       self.removed('tweets', id);
-  //     })
-  //   }
-  // });
+  userCursor = Users.find({_id: self.userId});
+  ids = [];
+  user = userCursor.fetch()
+  ids.push(user[0].followingIds);
+  ids.push(self.userId);
+  followingIds = _.flatten(ids);
+
+  handleUsers = userCursor.observeChanges({
+    changed: function(id, doc) {
+      if (id == self.userId) {
+        addedIds = _.difference(doc.followingIds, followingIds);
+        removedIds = _.difference(followingIds, doc.followingIds);
+        console.log('Added Ids ' + addedIds);
+        _.each(addedIds, function(userId) {
+          console.log('Added relationship for ' + userId);
+          self.added('users', userId, Users.findOne({_id: userId}));
+        })
+        _.each(removedIds, function(userId) {
+          self.removed('users', userId);
+        })
+      }
+    }
+  });
+
+  this.onStop(function() {handleUsers.stop()})
+
   cursor.push(Users.find({_id: {$in: followingIds}}));
   cursor.push(Tweets.find({userId: {$in: followingIds}}, {sort: {tweetedAt: -1}}));
 
   return cursor
 })
+
+Meteor.publish('myFollowers', function() {
+  return Users.find({_id: this.userId}, {fields: {followingIds: 1}});
+});
 
 Meteor.publish('profile', function(username) {
   return Users.find({username: username}, {fields: {createdAt: 1, profile: 1, username: 1}});
@@ -42,16 +46,14 @@ Meteor.publish('profileTweets', function(username) {
   return Tweets.find({userId: user._id}, {sort: {tweetedAt: -1}});
 })
 
-Meteor.publish('relationship', function(username) {
-  user = Users.findOne({username: username});
-  return Relationships.find({followerId: this.userId, followingId: user._id})
-})
+// Meteor.publish('relationship', function(username) {
+//   user = Users.findOne({username: username});
+//   return Relationships.find({followerId: this.userId, followingId: user._id})
+// })
 
 Meteor.publish('usernames', function(selector, options, collName) {
   collection = global[collName]
   sub = this
-  console.log(selector)
-  console.log(options)
   handle = collection.find(selector, options).observeChanges({
     added: function(id, fields) {
       sub.added('autocompleteRecords', id, fields)

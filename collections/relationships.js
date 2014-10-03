@@ -7,14 +7,13 @@ Relationships = new Mongo.Collection('relationships');
 Meteor.methods({
   'relationships/create': function(followingId) {
     if (Meteor.isServer) {
-      relation = Relationships.insert({followingId: followingId, followerId: Meteor.userId()});
-      return relation ? true : false
+      Meteor.users.update({_id: this.userId}, { $push: {followingIds: followingId}});
     }
   },
 
   'relationships/destroy': function(followingId) {
     if (Meteor.isServer) {
-      Relationships.remove({followingId: followingId, followerId: Meteor.userId()})
+      Meteor.users.update({_id: this.userId}, { $pull: {followingIds: followingId}});
     }
   },
 })
