@@ -6,6 +6,9 @@ Template.profile.helpers({
     if (Meteor.user() && Meteor.user().followingIds) {
       return _.contains(Meteor.user().followingIds, this.user._id);
     }
+  },
+  numberOfTweets: function() {
+    return Counts.get('tweets');
   }
 })
 

@@ -43,7 +43,14 @@ Meteor.publish('profile', function(username) {
 
 Meteor.publish('profileTweets', function(username) {
   user = Users.findOne({username: username});
-  return Tweets.find({userId: user._id}, {sort: {tweetedAt: -1}});
+  tweets = Tweets.find({userId: user._id}, {sort: {tweetedAt: -1}})
+  Counts.publish(this, 'tweets', tweets, {noReady: true});
+  return tweets;
+})
+
+Meteor.publish('mentionedTweets', function() {
+  console.log('loading mentioned tweets')
+  return Tweets.find({mentionIds: {$in: [this.userId]}});
 })
 
 // Meteor.publish('relationship', function(username) {

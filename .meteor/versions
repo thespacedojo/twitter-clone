@@ -70,6 +70,7 @@ srp@1.0.0
 standard-app-packages@1.0.2
 stylus@1.0.4
 templating@1.0.7
+tmeasday:publish-counts@0.3.4
 tracker@1.0.2
 ui@1.0.3
 underscore@1.0.0

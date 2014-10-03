@@ -3,6 +3,13 @@ Tweets = new Mongo.Collection('tweets')
 Tweets.before.insert(function(userId, doc) {
   doc.tweetedAt = moment()._d;
   doc.userId = userId;
+  doc.mentions = doc.text.match(/@\w+/gm);
+  doc.mentionIds = _.map(doc.mentions, function(mention) {
+    user = Meteor.users.findOne({username: mention.substr(1)})
+    if (user) {
+      return user._id;
+    }
+  })
 })
 
 Tweets.helpers({

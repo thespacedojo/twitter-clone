@@ -1,157 +1,99 @@
 <template name="notifications">
-	
-	<div id="stream" class="container">
-		<div class="row">
-			<div class="col-md-4 col-lg-3">
-				<div id="profile-panel" class="panel panel-default">
-					<div class="media panel-body">
 
-						<!-- profile photo -->
-						<a class="pull-left" href="#">
-							<img class="media-object" src="https://pbs.twimg.com/profile_images/484387570214645761/BFPL5V4G_bigger.jpeg" alt="...">
-						</a>
+  <div id="stream" class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-3">
+        <div id="profile-panel" class="panel panel-default">
+          <div class="media panel-body">
 
-						<!-- profile information -->
-						<div class="media-body">
-							<span class="username"><strong>amanda saffer</strong></span> <br>
-							<span class="handle">@12pixels</span>
-						</div>
+            <!-- profile photo -->
+            <a class="pull-left" href="#">
+              <img class="media-object" src="https://pbs.twimg.com/profile_images/484387570214645761/BFPL5V4G_bigger.jpeg" alt="...">
+            </a>
 
-						<!-- profile stats -->
-						<table id="profile-stats" class="table">
-							<tr class="head">
-								<td><strong>Tweets</strong></td>
-								<td><strong>Following</strong></td> 
-								<td><strong>Followers</strong></td>
-							</tr>
-							<tr class="numbers">
-								<td>500</td>
-								<td>240</td> 
-								<td>1,600</td>
-							</tr>
-						</table>
-					</div>
+            <!-- profile information -->
+            <div class="media-body">
+              <span class="username"><strong>amanda saffer</strong></span> <br>
+              <span class="handle">@12pixels</span>
+            </div>
 
-					<!-- compose a tweet -->
-					<div class="panel-footer">
-					  <input type="text" class="form-control" placeholder="Compose new Tweet...">
-					</div>
-				</div>
+            <!-- profile stats -->
+            <table id="profile-stats" class="table">
+              <tr class="head">
+                <td><strong>Tweets</strong></td>
+                <td><strong>Following</strong></td>
+                <td><strong>Followers</strong></td>
+              </tr>
+              <tr class="numbers">
+                <td>500</td>
+                <td>240</td>
+                <td>1,600</td>
+              </tr>
+            </table>
+          </div>
 
-				<!-- trending topics -->
-				<div id="trending" class="panel panel-default">
-					<div class="panel-body">
-						<h4>Trending Topics</h4>
-					</div>
-					<ul class="list-group">
-						<a href="#" class="list-group-item">#food</a>
-						<a href="#" class="list-group-item">#meteorclub</a>
-						<a href="#" class="list-group-item">#loremipsumdolor</a>
-						<a href="#" class="list-group-item">#dracodormiens</a>
-						<a href="#" class="list-group-item">#atmospherejs</a>
-					</ul>
-				</div>
-			</div>
+          <!-- compose a tweet -->
+          <div class="panel-footer">
+            <input type="text" class="form-control" placeholder="Compose new Tweet...">
+          </div>
+        </div>
 
-			<div class="col-md-8 col-lg-6">
-				<ul id="notification-stream" class="list-group">
-					<!-- title -->
-					<li class="list-group-item">
-						<h4 class="list-group-item-heading">Notifications</h4>
-					</li>
+        <!-- trending topics -->
+        <div id="trending" class="panel panel-default">
+          <div class="panel-body">
+            <h4>Trending Topics</h4>
+          </div>
+          <ul class="list-group">
+            <a href="#" class="list-group-item">#food</a>
+            <a href="#" class="list-group-item">#meteorclub</a>
+            <a href="#" class="list-group-item">#loremipsumdolor</a>
+            <a href="#" class="list-group-item">#dracodormiens</a>
+            <a href="#" class="list-group-item">#atmospherejs</a>
+          </ul>
+        </div>
+      </div>
 
-					<!-- unit (delete extras for loop) -->
-					<li class="list-group-item tweet">
-						
-						<!-- display name, @username, and time ago -->
-						<h5 class="tweet-author">Ned Stark <span class="author-info"><a href="#">@nedstark &middot; 18m</a></span></h5>
+      <div class="col-md-8 col-lg-6">
+        <ul id="notification-stream" class="list-group">
+          <!-- title -->
+          <li class="list-group-item">
+            <h4 class="list-group-item-heading">Notifications</h4>
+          </li>
 
-						<!-- the post content -->
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
+          {{> newTweets}}
 
-						<span class="expand"><a href="#">Expand</a></span>
+          {{#each tweets}}
+            {{> tweet}}
+          {{/each}}
 
-						<!-- post interactions -->
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Dana Scully <span class="author-info"><a href="#">@scully &middot; 25m</a></span></h5>
-
-						<p class="list-group-item-text">Dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod rati.</p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Buffy Summers <span class="author-info"><a href="#">@nedstark &middot; 26m</a></span></h5>
-
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Barney Rubble <span class="author-info"><a href="#">@barneyrubble &middot; 16m</a></span></h5>
-
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod ratione debitis. </p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-
-					<!-- load more tweets -->
-					<li class="list-group-item load-more">
-						<a href="#">Load more tweets</a>
-					</li>
-				</ul>
-			</div>
+          <!-- load more tweets -->
+          <li class="list-group-item load-more">
+            <a href="#">Load more tweets</a>
+          </li>
+        </ul>
+      </div>
 
 
-			<!-- who to follow -->
-			<!-- responsive works if tweet stream is long enough, but otherwise it hangs.
-			can fix with javascript but i dunno if you wanna go through that much trouble. -->
-			<div class="col-md-8 col-md-offset-4 col-lg-3 col-lg-offset-0">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h4>Who to follow</h4>
-					</div>
+      <!-- who to follow -->
+      <!-- responsive works if tweet stream is long enough, but otherwise it hangs.
+      can fix with javascript but i dunno if you wanna go through that much trouble. -->
+      <div class="col-md-8 col-md-offset-4 col-lg-3 col-lg-offset-0">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Who to follow</h4>
+          </div>
 
-					<ul class="list-group">
-						<a href="#" class="list-group-item"><strong>Josh Owens</strong> @joshowens</a>
-						<a href="#" class="list-group-item"><strong>Sacha Greif</strong> @sachagreif</a>
-						<a href="#" class="list-group-item"><strong>Tom Coleman</strong> @tmeasday</a>
-					</ul>
+          <ul class="list-group">
+            <a href="#" class="list-group-item"><strong>Josh Owens</strong> @joshowens</a>
+            <a href="#" class="list-group-item"><strong>Sacha Greif</strong> @sachagreif</a>
+            <a href="#" class="list-group-item"><strong>Tom Coleman</strong> @tmeasday</a>
+          </ul>
 
-					<div class="panel-footer short">
-					  <p>Find <a href="#">people you know</a>?</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <div class="panel-footer short">
+            <p>Find <a href="#">people you know</a>?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
