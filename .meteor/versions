@@ -33,7 +33,7 @@ iron:location@1.0.0
 iron:middleware-stack@1.0.0
 iron:router@1.0.0
 iron:url@1.0.0
-joshowens:accounts-entry@0.9.0
+joshowens:accounts-entry@1.0.0
 joshowens:simple-form@0.1.8
 jquery@1.0.1
 json@1.0.1
