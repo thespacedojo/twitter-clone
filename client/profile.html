@@ -26,7 +26,11 @@
 
     <ul class="nav navbar-nav navbar-right">
       <!-- follow button -->
-      <li class="follow-me"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp; Follow</button></li>
+      {{#if following}}
+        <li class="unfollow-me"><button class="btn btn-warning"><i class="fa fa-minus"></i>&nbsp; Unfollow</button></li>
+      {{else}}
+        <li class="follow-me"><button class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp; Follow</button></li>
+      {{/if}}
     </ul>
 
     <!-- following button -->
