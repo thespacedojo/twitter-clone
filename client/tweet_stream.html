@@ -13,8 +13,10 @@
 
 						<!-- profile information -->
 						<div class="media-body">
-							<span class="username"><strong>amanda saffer</strong></span> <br>
-							<span class="handle">@12pixels</span>
+              {{#with user}}
+							<span class="username"><strong>{{profile.name}}</strong></span> <br>
+							<span class="handle">@{{username}}</span>
+              {{/with}}
 						</div>
 
 						<!-- profile stats -->
@@ -34,7 +36,10 @@
 
 					<!-- compose a tweet -->
 					<div class="panel-footer">
-					  <input type="text" class="form-control" placeholder="Compose new Tweet...">
+					  <input type="text" class="form-control tweet-input" placeholder="Compose new Tweet...">
+            <div class="row">
+              <button type="button" class="btn btn-default btn-xs pull-right tweet-btn"><i class="fa fa-reply"></i> Tweet</button>
+            </div>
 					</div>
 				</div>
 
@@ -60,14 +65,16 @@
 					</li>
 
 
+          {{#each tweets}}
+            
 					<!-- unit (delete extras for loop) -->
 					<li class="list-group-item tweet">
 						
 						<!-- display name, @username, and time ago -->
-						<h5 class="tweet-author">Ned Stark <span class="author-info"><a href="#">@nedstark &middot; 18m</a></span></h5>
+						<h5 class="tweet-author">{{fullName}} <span class="author-info"><a href="#">@{{username}} &middot; {{tweetedTime}}</a></span></h5>
 
 						<!-- the post content -->
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
+						<p class="list-group-item-text">{{text}}</p>
 
 						<span class="expand"><a href="#">Expand</a></span>
 
@@ -78,48 +85,8 @@
 							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
 						</div>
 					</li>
+          {{/each}}
 
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Barney Rubble <span class="author-info"><a href="#">@barneyrubble &middot; 16m</a></span></h5>
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod ratione debitis. </p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-					
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Dana Scully <span class="author-info"><a href="#">@scully &middot; 25m</a></span></h5>
-						<p class="list-group-item-text">Dolor sit amet, consectetur adipisicing elit. Voluptates minus rem vero quidem eligendi consectetur harum quod rati.</p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
-					
-					<!-- unit -->
-					<li class="list-group-item tweet">
-						<h5 class="tweet-author">Buffy Summers <span class="author-info"><a href="#">@nedstark &middot; 26m</a></span></h5>
-						<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione facere expedita mollitia draco dormiens. #yum #food</p>
-
-						<span class="expand"><a href="#">Expand</a></span>
-
-						<div class="tweet-options pull-right">
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-reply"></i> Reply</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-retweet"></i> Retweet</button>
-							<button type="button" class="btn btn-default btn-xs"><i class="fa fa-star"></i> Favorite</button>
-						</div>
-					</li>
 
 					<!-- load more tweets -->
 					<li class="list-group-item load-more">

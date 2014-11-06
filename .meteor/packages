@@ -5,10 +5,11 @@
 
 meteor-platform
 standard-app-packages
-autopublish
-insecure
 iron:router
 mizzao:bootstrap-3
 natestrauser:font-awesome
 stylus
 joshowens:accounts-entry
+dburles:collection-helpers
+matb33:collection-hooks
+mrt:moment
