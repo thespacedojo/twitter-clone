@@ -50,14 +50,14 @@
       <div class="profile-information">
         <img src="https://pbs.twimg.com/profile_images/484387570214645761/BFPL5V4G_400x400.jpeg" alt="" class="profile-image">
 
-        <h3 class="username">amanda saffer</h3>
-        <span class="handle">@12pixels</span>
+        <h3 class="username">{{profile.name}}</h3>
+        <span class="handle">@{{username}}</span>
         <p class="user-profile-description">designs &amp; develops websites. spends a lot of time in photoshop. likes science, cats, and magic the gathering.</p>
 
         <ul class="user-profile-info">
           <li><i class="fa fa-fw fa-map-marker"></i> Austin, TX</li>
           <li><i class="fa fa-fw fa-link"></i> <a href="http://amandasaffer.com">amandasaffer.com</a></li>
-          <li><i class="fa fa-fw fa-clock-o"></i> Joined April 05, 2014</li>
+          <li><i class="fa fa-fw fa-clock-o"></i> Joined {{joined}}</li>
         </ul>
       </div>
 
@@ -69,6 +69,11 @@
           <h4 class="list-group-item-heading">My Latest Tweets</h4>
         </li>
 
+        {{#if newTweets.count}}
+        <li class="list-group-item tweet">
+          <p>There are {{newTweets.count}} new tweets! <a class="showTweets">Show</a></p>
+        </li>
+        {{/if}}
         {{#each tweets}}
           {{> tweet}}
         {{/each}}
