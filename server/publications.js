@@ -17,6 +17,10 @@ Meteor.publish('tweets', function() {
   return [tweets, users];
 });
 
+Meteor.publish('mentionedTweets', function() {
+  return Tweets.find({mentionIds: {$in: [this.userId]}});
+});
+
 Meteor.publish('profile', function(username) {
   return Users.find({username: username}, {fields: {services: 0, emails: 0}});
 });
