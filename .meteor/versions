@@ -35,7 +35,7 @@ iron:middleware-stack@1.0.0
 iron:router@1.0.0
 iron:url@1.0.0
 joshowens:accounts-entry@1.0.1
-joshowens:simple-form@0.1.8
+joshowens:simple-form@0.2.2
 jquery@1.0.1
 json@1.0.1
 launch-screen@1.0.0
@@ -62,6 +62,8 @@ natestrauser:font-awesome@4.2.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
+pfafman:coffee-alerts@0.5.1_1
+pfafman:font-awesome-4@4.2.0
 random@1.0.1
 reactive-dict@1.0.4
 reactive-var@1.0.3
@@ -69,6 +71,7 @@ reload@1.1.1
 retry@1.0.1
 reywood:publish-composite@1.3.3
 routepolicy@1.0.2
+schnie:uploader@2.0.3
 service-configuration@1.0.2
 session@1.0.4
 sha@1.0.1

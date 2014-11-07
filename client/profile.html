@@ -52,11 +52,11 @@
 
         <h3 class="username">{{profile.name}}</h3>
         <span class="handle">@{{username}}</span>
-        <p class="user-profile-description">designs &amp; develops websites. spends a lot of time in photoshop. likes science, cats, and magic the gathering.</p>
+        <p class="user-profile-description">{{profile.description}}</p>
 
         <ul class="user-profile-info">
           <li><i class="fa fa-fw fa-map-marker"></i> Austin, TX</li>
-          <li><i class="fa fa-fw fa-link"></i> <a href="http://amandasaffer.com">amandasaffer.com</a></li>
+          <li><i class="fa fa-fw fa-link"></i> <a href="{{profile.url}}">{{profile.url}}</a></li>
           <li><i class="fa fa-fw fa-clock-o"></i> Joined {{joined}}</li>
         </ul>
       </div>
