@@ -1,3 +1,9 @@
+Counts = new Mongo.Collection('tweetCounts')
+
+Template.tweetStream.created = function() {
+  Meteor.subscribe('tweetCounts');
+}
+
 Template.tweetStream.events({
   "click .tweet-btn": function(event, template) {
     tweet = template.$('.tweet-input').val();
@@ -11,6 +17,11 @@ Template.tweetStream.events({
 });
 
 Template.tweetStream.helpers({
+  tweetCount: function() {
+    agg = Counts.findOne({_id: Meteor.userId()})
+    if (agg)
+      return agg.count
+  },
   settings: function() { 
     return {
       position: "bottom",

@@ -17,6 +17,13 @@ Meteor.publish('tweets', function() {
   return [tweets, users];
 });
 
+Meteor.publish('tweetCounts', function() {
+  self = this;
+  count = Tweets.aggregate([{$match: {userId: {$in: [self.userId]}}},{$group: {_id: "$userId", count: {$sum: 1}}}]);
+  self.added('tweetCounts', this.userId, count[0]);
+  self.ready();
+})
+
 Meteor.publish('mentionedTweets', function() {
   return Tweets.find({mentionIds: {$in: [this.userId]}});
 });
