@@ -27,5 +27,8 @@ Template.profile.events({
   },
   'click .follow-me': function(event, template) {
     Meteor.call('follow', template.data._id);
+  },
+  'click .unfollow-me': function(event, template) {
+    Meteor.call('unfollow', template.data._id);
   }
 });
