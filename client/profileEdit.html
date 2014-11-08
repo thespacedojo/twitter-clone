@@ -1,0 +1,23 @@
+<template name="profileEdit">
+<div class="entry">
+  {{#with profile}}
+  <form class="form">
+      <div class="form-group">
+        {{text_field 'name' required=true}}
+      </div>
+      <div class="form-group">
+        {{text_area 'description'}}
+      </div>
+
+      <div class="form-group">
+        {{text_field 'url' type="url"}}
+      </div>
+
+      <div class="form-group">
+      {{> uploader settings=forProfilePic}}
+      </div>
+    {{submit_button 'Update profile'}}
+  </form>
+  {{/with}}
+</div>
+</template>

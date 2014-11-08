@@ -58,12 +58,15 @@ natestrauser:font-awesome@4.2.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
+pfafman:coffee-alerts@0.5.1_1
+pfafman:font-awesome-4@4.2.0
 random@1.0.1
 reactive-dict@1.0.4
 reactive-var@1.0.3
 reload@1.1.1
 retry@1.0.1
 routepolicy@1.0.2
+schnie:uploader@2.0.3
 service-configuration@1.0.2
 session@1.0.4
 sha@1.0.1
